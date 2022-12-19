@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.contents{
+	display: flex;
+}
+
+.subMenuWrap{
+	display: flex;
+	justify-content: center;
+}
+
+.subMenu{
+	display: flex;
+	justify-content: center;
+	background-color: antiquewhite;
+	width: 500px;
+}
+
+.bookPage{
+	margin-right: 50px;
+}

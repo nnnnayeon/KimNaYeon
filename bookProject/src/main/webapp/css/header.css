@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+.header{
+	display: flex;
+	justify-content: space-between;
+}
+
+.topMenu{
+	display: flex;
+}
+
+.join{
+	margin-left: 45px;
+}
+
+.loginWrap{
+	display: flex;
+	margin-right: 45px;
+}
+
+.loginName{
+	margin-right: 45px;
+}
