@@ -37,16 +37,31 @@ if(session.getAttribute("log") != null) {
 		</div>
 	</div>
 	
-	<div class="myPage">
-		<h3><%=userName %>님 마이페이지</h3>
+	<h3>회원정보 수정</h3>
+	
+	<div class="updateMe">
+		<form id="updateForm" method="post" action="./Service">
+		<input type="hidden" name="command" value="update">
+			
+			<span class="userId">아이디</span>
+			<input type="text" readonly>
+			
+			<span class="userPw">비밀번호</span>
+			<input type="password" name="password" class="name">
+			
+			<span class="userName">이름</span>
+			<input type="text" name="name" class="name" placeholder="이름">
+			
+			<span class="userEmail">번호</span>
+			<input type="text" name="mobile" class="mobile" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####">
+			
+			<input type="submit" class="updateBtn" value="수정하기">
+			<input type="button" class="backBtn" value="뒤로가기" onclick="location.href='./myPage.jsp'">
 		
-		<input type="button" class="btn" name="updateBtn" value="프로필편집" onclick="location.href='./updateMyInfo.jsp'">
+		</form>
 	</div>
 	
-	<div class="myBook">
-		<div class="dibsBook">찜</div>
-		<div class="myReviews">내리뷰</div>
-	</div>
+	
 	
 	<!-- <div class="myPageMenuWrap">
 		<div class="myPageMenu">

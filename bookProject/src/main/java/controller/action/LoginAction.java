@@ -32,7 +32,6 @@ public class LoginAction implements Action{
 			url = "index.jsp";
 			
 			session.setAttribute("log", userDao.getId(userId));
-			session.setAttribute("userName", userDao.getName(userId));
 			
 			System.out.println("LoginAction 성공");
 		} else {

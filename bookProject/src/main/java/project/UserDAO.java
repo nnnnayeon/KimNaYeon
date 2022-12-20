@@ -108,12 +108,12 @@ public class UserDAO {
 	}
 	
 	// 로그인 유저 이름 가져오기
-	public String getName(String id) {
+	public String getName(int log) {
 		conn = DBManager.getConnection("bookproject");
 		
 		String userName = "";
 		try {
-			String sql = String.format("select name from users where userId='%s';", id);
+			String sql = String.format("select name from users where userNo='%d';", log);
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -121,7 +121,6 @@ public class UserDAO {
 				userName = rs.getString(1);
 			}
 			
-			System.out.println("Name 로드 성공 : " + userName);
 			return userName;
 			
 		} catch (Exception e) {

@@ -1,3 +1,4 @@
+<%@ page import="project.UserDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,7 +18,9 @@ if(session.getAttribute("log") != null) {
 	log = (int) session.getAttribute("log");
 	System.out.println(log + "##");
 	
-	userName = (String) session.getAttribute("userName");
+	UserDAO dao = UserDAO.getInstance();
+	
+	userName = dao.getName(log);
 	System.out.println("userName : " + userName);
 }
 %>
@@ -29,7 +32,7 @@ if(session.getAttribute("log") != null) {
 			if(session.getAttribute("log") != null) {
 			%>
 			<div class="loginWrap">
-				<div class="loginName"><% out.print(userName); %> 님</div>
+				<div class="loginName"><%= userName %> 님</div>
 				
 				<form id="logoutForm" method="post" action="./Service">
 				<input type="hidden" id="hiddenInput" name="command" value="">
