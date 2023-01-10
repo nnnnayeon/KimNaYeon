@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/common.css">
-<title>updateMyInfo</title>
+<title>deleteUser</title>
 </head>
 <body>
 <%
@@ -52,27 +52,13 @@ if(session.getAttribute("log") == null) {
 		<form id="updateForm" method="post" action="./Service">
 		<input type="hidden" name="command" value="update">
 			
-			<span class="userId">아이디</span>
-			<input type="text" class="user_id" value="id" readonly>
+			<span class="userPw">비밀번호</span>
+			<input type="password" name="password" class="name">
 			
-			<span class="userName">이름</span>
-			<input type="text" name="name" class="name" value="<%=userName %>" placeholder="이름">
-			
-			<span class="userEmail">번호</span>
-			<input type="text" name="mobile" class="mobile" value="" placeholder="-포함 입력해주세요" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####">
-			
-			<input type="submit" class="updateBtn" value="수정하기">
-			<input type="button" class="backBtn" value="뒤로가기" onclick="location.href='./myPage.jsp'">
+			<input type="submit" class="updateBtn" value="탈퇴하기">
 		
 		</form>
 	</div>
-	
-	<script>
-	$(document).ready(function () {
-		getUpdateId(<%=log%>);
-	})
-	</script>
-	<script src="js/update.js"></script>
 	
 	<%
 	}

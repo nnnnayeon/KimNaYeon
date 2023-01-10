@@ -15,16 +15,17 @@
 int log = -1;
 String userName = "";
 
-if(session.getAttribute("log") != null) {
+if(session.getAttribute("log") == null) {
+	String url = "/";
+	request.getRequestDispatcher(url).forward(request, response);
+	System.out.println(log + "$$");	
+	
+} else {
 	log = (int) session.getAttribute("log");
-	/* System.out.println(log + "@@"); */
 	
 	UserDAO dao = UserDAO.getInstance();
 	
 	userName = dao.getName(log);
-} else {
-	System.out.println(log + "$$");
-}
 %>
 	<jsp:include page="header.jsp"></jsp:include>
 	
@@ -48,15 +49,8 @@ if(session.getAttribute("log") != null) {
 		<div class="myReviews">내리뷰</div>
 	</div>
 	
-	<!-- <div class="myPageMenuWrap">
-		<div class="myPageMenu">
-			<div class="updateMe">내 프로필</div>
-			<div class="updatePw">비밀번호 변경</div>
-			<div class="deleteUser">회원탈퇴</div>
-		</div>
-	</div> -->
-	
-	<div id="myContent"></div>
-
+	<%
+	}
+	%>
 </body>
 </html>

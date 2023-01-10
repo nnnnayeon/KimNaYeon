@@ -8,7 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <link rel="stylesheet" href="css/main.css">
 <link rel="stylesheet" href="css/common.css">
-<title>updateMyInfo</title>
+<title>updateMyPw</title>
 </head>
 <body>
 <%
@@ -52,27 +52,19 @@ if(session.getAttribute("log") == null) {
 		<form id="updateForm" method="post" action="./Service">
 		<input type="hidden" name="command" value="update">
 			
-			<span class="userId">아이디</span>
-			<input type="text" class="user_id" value="id" readonly>
+			<div class="_pw">이전 비밀번호</div>
+			<input type="password" name="pw_past" id="pw_past" required>
 			
-			<span class="userName">이름</span>
-			<input type="text" name="name" class="name" value="<%=userName %>" placeholder="이름">
+			<div class="__pw">새 비밀번호</div>
+			<input type="password" name="pw_new" id="pw_new" required>
 			
-			<span class="userEmail">번호</span>
-			<input type="text" name="mobile" class="mobile" value="" placeholder="-포함 입력해주세요" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" title="###-####-####">
+			<div class="___pw">비밀번호 재확인</div>
+			<input type="password" name="pw_check" id="pw_check" required>
 			
 			<input type="submit" class="updateBtn" value="수정하기">
-			<input type="button" class="backBtn" value="뒤로가기" onclick="location.href='./myPage.jsp'">
 		
 		</form>
 	</div>
-	
-	<script>
-	$(document).ready(function () {
-		getUpdateId(<%=log%>);
-	})
-	</script>
-	<script src="js/update.js"></script>
 	
 	<%
 	}

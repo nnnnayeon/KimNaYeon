@@ -138,5 +138,8 @@ public class UserDAO {
 		System.out.println("Name 로드 실패");
 		return userName;
 	}
+	
+	//////// log가 *인 사람의 모든 정보 가져오기
+	// https://webfirewood.tistory.com/11
 
 }
